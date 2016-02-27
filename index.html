@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!--[if IE]>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lt IE 9]>
+			<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			#preloader{height: 100vh;width: 100vw;padding-top: 30%;text-align: center;position: fixed;left: 0;top: 0;bottom: 0;right: 0;z-index: 1010;}
+			body.loading{background-color: #757d75;}
+			body.loading #app{display: none;}
+			#app.loading{-webkit-filter: blur(2px);-moz-filter: blur(2px);-ms-filter: blur(2px);-o-filter: blur(2px);filter: blur(2px);}
+			#header>.panel,#body>.panel,#footer>.panel{margin-bottom: 0;overflow-x: hidden;border-radius: 0;}
+			#header{position: fixed;left: 0;top: 0;right: 0;height: 40px;}
+			#body{position: fixed;left: 0;top: 40px;right: 0;bottom: 40px;}
+			#body>.panel{height: 100%;}
+			#body>.panel>.panel-body{height: 100%;overflow-y: auto;}
+			#footer{position: fixed;left: 0;bottom: 0;right: 0;height: 40px;}
+		</style>
+	</head>
+	<body class="loading">
+		<div id="app">
+			<div id="body">
+				<div class="panel panel-primary">
+					<div class="panel-body" id="pageTemplate">
+						<div class="row">
+							<div class="col-xs-12 col-sm-5 img-thumbnail">
+								<img src="{{locationImage}}" class="img-responsive" />
+							</div>
+							<div class="col-xs-2 col-sm-1">
+								<img src="{{conditionImage}}" alt="{{title}}" />
+							</div>
+							<div class="col-xs-4 col-sm-3">
+								<p><b>{{title}}</b><br />{{description}}</p>
+							</div>
+							<div class="col-xs-6 col-sm-3">
+								<div class="row">
+									<div class="col-xs-4">
+										<p class="lead"><small>NOW</small><br />
+										<b>{{temp}}&deg;C</b></p>
+									</div>
+									<div class="col-xs-4">
+										<p><small>MIN</small><br />
+										{{tempMin}}&deg;C</p>
+									</div>
+									<div class="col-xs-4">
+										<p><small>MAX</small><br />
+										{{tempMax}}&deg;C</p>
+									</div>
+								</div>
+								<p class="text-center">
+									<b>Updated:</b>
+									<time class="timeago" datetime="{{readingTime}}"></time>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="header">
+				<div class="panel panel-primary">
+					<div class="panel-heading" id="appMenuContainer">Weather Around</div>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="panel panel-primary">
+					<div class="panel-footer text-right">&copy; 2016</div>
+				</div>
+			</div>
+		</div>
+		<div id="preloader">
+			<img alt="loading" src="http://www.nasa.gov/multimedia/videogallery/ajax-loader.gif" />
+		</div>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="weather.js"></script>
+	</body>
+</html>
