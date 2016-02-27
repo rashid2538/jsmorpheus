@@ -112,7 +112,7 @@
 			}
 		}, weather : function( location ) {
 			return $.ajax({
-				url : 'http://api.openweathermap.org/data/2.5/weather',
+				url : '//api.openweathermap.org/data/2.5/weather',
 				cache : false,
 				data : {
 					lat : location.latitude,
@@ -132,11 +132,11 @@
 	window.app = new App({
 		title : 'Weather Around',
 		css : [
-			'http://bootswatch.com/' + themes[ Math.floor( Math.random() * themes.length ) ] + '/bootstrap.css',
+			'//bootswatch.com/' + themes[ Math.floor( Math.random() * themes.length ) ] + '/bootstrap.css',
 			'icons/weather.css'
 		], js : [
-			'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
-			'https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.2/jquery.timeago.min.js'
+			'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
+			'//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.2/jquery.timeago.min.js'
 		]
 	});
 	var startLocating = function() {
